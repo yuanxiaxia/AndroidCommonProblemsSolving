@@ -1,2 +1,4 @@
 若Activity中包含一个ListView，并在和ListView同级的页面中有对ListView操作的按钮，对ListView操作后需要及时更新当前Activity页面，此时在Button的onClick方法中调用Adapter的notifyDataSetChanged方法就可以直接更新当前页面。但是要注意，对ListView的数据源进行添加操作时，不需要再重新初始化数据源的List，否则添加不成功。
 具体链接：https://blog.csdn.net/like_program/article/details/52517119?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.channel_param
+
+当修改了（增加/删除/修改）ListView中某个数据时，一定要在数据源中改变被操作的数据，然后再调用notifyDataSetChanged方法。
